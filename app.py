@@ -5,15 +5,14 @@ from random import random
 from threading import Lock
 from datetime import datetime
 from dht22_module import DHT22Module
-import board
 
-dht22_module = DHT22Module(board.D18)
+DHT22_PIN = 'D18'
+dht22_module =  DHT22Module(DHT22_PIN)
 
 thread = None
 thread_lock = Lock()
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "donsky!"
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 """
@@ -69,5 +68,5 @@ def disconnect():
     print("Client disconnected", request.sid)
 
 
-# if __name__ == "__main__":
-#     socketio.run(app, port=5000, host="0.0.0.0", debug=True)
+if __name__ == "__main__":
+    socketio.run(app, port=5000, host="0.0.0.0", debug=True)

@@ -13,6 +13,7 @@ Flask-Login==0.6.2
 Flask-Session==0.4.0
 Flask-SocketIO==5.3.4
 gunicorn==20.1.0
+eventlet==0.30.2
 importlib-metadata==4.12.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
